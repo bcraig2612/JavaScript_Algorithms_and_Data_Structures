@@ -25,3 +25,16 @@
 // Our function addUpToo would be ---> O(1)
 // Our function countUpAndDown would be ---> O(n)
 // Our function printAllHours would be ---> O(n*n)
+
+
+// Big O Shorthands
+    // Analyzing complexity with Big O can get complicated
+    // There are several rules of thumb that can help
+    // These rules won't ALWAYS work, but are a helpful starting point
+        // (1) Arithmetic operations are constant
+        // (2) Variable assignment is constant
+        // (3) Accessing elements in an array (by index) or object (by key) is constant 
+        // (4) In a loop, the complexity is the length of the loop times the complexity of whatever happens inside of the loop
+
+
+
