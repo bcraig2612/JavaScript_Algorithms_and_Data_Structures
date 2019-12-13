@@ -1,5 +1,6 @@
-// this pattern uses objects or sets of collect values/frequencies of values
-// this can often avoid the need for nested loops or O(n*n) operations with arrays / strings; instead uses O(n)
+// ****FREQUENCY COUNTER: This pattern uses objects or sets of collect values/frequencies of values
+//                        this can often avoid the need for nested loops or O(n*n) operations with 
+//                        arrays / strings; instead uses O(n)
 
 // **EXAMPLE**
 
