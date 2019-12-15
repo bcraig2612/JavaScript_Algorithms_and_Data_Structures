@@ -32,3 +32,9 @@
   *}*
   *return maxDigits;*
 *}*
+
+
+***BIG O NOTATION RADIX SORT NOTE***
+- *For the .png file in this section to display the Big O of Radix Sort:*
+  - *The n is the length of the array*
+  - *The k is the number of digits(average)*
