@@ -1,26 +1,9 @@
-// If the index is less than zero or greater than the length, return false
-
-// If the index is the same as the length, push a new node to the end of the list
-
-// If the index is 0, unshift a new node to the start of the list
-
-// Otherwise, using the get method, access the node at the index - 1
-
-// Set the next property on that node to be the new node
-
-// Set the next property on the new node to be the previous next
-
-// Increment the length
-
-// Return true
-
 class Node {
   constructor(val) {
     this.val = val;
     this.next = null;
   }
 }
-
 class SinglyLinkedList {
   constructor() {
     this.head = null;
@@ -165,6 +148,65 @@ class SinglyLinkedList {
     // Return true
     return true;
   }
+  // skeleton for remove method. allows you to remove a node from the linked list at a specific location/index
+  // takes in an index as a parameter
+  remove(index) {
+    // If the index is less than zero or greater than the length, return undefined
+    if (index < 0 || index >= this.length) return undefined;
+    // If the index is 0, shift
+    if (index === 0) return this.shift();
+    // If the index is the same as the length-1, pop
+    if (index === this.length - 1) return this.pop();
+    // Otherwise, using the get method, access the node at the index - 1
+    var previousNode = this.get(index - 1);
+    // Set the next property on that node to be the next of the next node
+    var removed = previousNode.next;
+    previousNode.next = removed.next;
+    // Decrement the length
+    this.length--;
+    // Return the value of the node removed
+    return removed;
+  }
+  // skeleton for reverse method. allows you to reverse the linked list in place. (no copy)
+  reverse() {
+    // Create a variable called node and initialize it to the head property
+    var node = this.head;
+    // Swap the head and tail
+    this.head = this.tail;
+    this.tail = node;
+    // Create a variable called next
+    var next;
+    // Create a variable called previous
+    var previous = null;
+    // Loop through the list
+    for (var i = 0; i < this.length; i++) {
+      // Set next to be the next property on whatever node is
+      next = node.next;
+      // Set the next property on the node to be whatever prev is
+      node.next = previous;
+      // Set prev to be the value of the node variable
+      previous = node;
+      // Set the node variable to be the value of the next variable
+      node = next;
+    }
+    // Once you have finished looping, return the list
+    return this;
+  }
+  // the print method is extra. its not required and is only being used to easily track whether or not the reverse method works correctly or not.
+  print() {
+    var arr = [];
+    var current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
 }
-
 var list = new SinglyLinkedList();
+
+list.push(100);
+list.push(201);
+list.push(250);
+list.push(350);
+list.push(999);
