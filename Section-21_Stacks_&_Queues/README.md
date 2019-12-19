@@ -1,3 +1,5 @@
+***STACKS***
+
 ***OBJECTIVES***
     - *Define what a stack is*
     - *Understand use cases for a stack*
@@ -5,6 +7,7 @@
 
 ***WHAT IS A STACK?***
     - *A LIFO data structure*
+    - *LAST IN FIRST OUT*
     - *The last element added to the stack will be the first element removed from the stack*
 
 ***HOW IS IT USED?***
@@ -31,3 +34,32 @@
     - *Stacks are used to handle function invocations (the call stack), for operations like undo/redo, and for routing (remember pages you have visited and go back/forward) and much more!*
     - *They are not a built in data structure in JavaScript, but are relatively simple to implement*
     - *Insert and remove are both O(1)*
+
+***QUEUES***
+
+***OBJECTIVES***
+    - *Define what a queue is*
+    - *Understand use cases for a queue*
+    - *Implement operations on a queue data structure*
+
+***WHAT IS A QUEUE?***
+    - *A FIFO data structure*
+    - *FIRST IN FIRST OUT*
+
+***WHERE QUEUES ARE USED***
+    - *Background Tasks*
+    - *Uploading Resources*
+    - *Printing/Task Processing*
+
+***Enqueue***
+    - *Adding to the beginning of a queue*
+    - *Remember, queues are a FIFO data structure*
+
+***Dequeue***
+    - *Removing from the beginning of the Queue*
+    - *Remember, queues are a FIFO data structure*
+
+***RECAP***
+    - *Queues are a FIFO data structure, all elements are first in first out.*
+    - *Queues are useful for processing tasks and are foundational for more complex data structures*
+    - *Insertion and Removal can be done in O(1)*
