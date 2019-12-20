@@ -23,9 +23,9 @@
     > *Database Indicies*
     > *Sorting Algorithms*
 **How Binary Search Trees Work**
-    > *Every parent node has at most two children.*
-    > *Every node to the left of a parent node is always less than the parent.*
-    > *Every node to the right of a parent node is always greater than the parent.*
+    > *Every parent node has AT MOST two children.*
+    > *Every node to the left of a parent node is always LESS than the parent.*
+    > *Every node to the right of a parent node is always GREATER than the parent.*
 
 *Lists - linear*
 *Trees - non-linear*
