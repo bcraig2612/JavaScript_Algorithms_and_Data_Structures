@@ -90,13 +90,20 @@ class BinarySearchTree {
     return data;
   }
   DFSPostOrder() {
+    //  > *Create a variable to store the values of nodes visited*
     var data = [];
+    //  > *Write a helper function which accepts a node*
     function traverse(node) {
+      //  > *If the node has a left property, call the helper function with the left property on the node*
       if (node.left) traverse(node.left);
+      //  > *If the node has a right property, call the helper function with the right property on the node*
       if (node.right) traverse(node.right);
+      //  > *Push the value of the node to the variable that stores the values*
       data.push(node.value);
     }
+    //  > *Invoke the helper function with the current variable*
     traverse(this.root);
+    //  > *Return the array of values*
     return data;
   }
   DFSInOrder() {
@@ -118,6 +125,11 @@ tree.insert(15);
 tree.insert(3);
 tree.insert(8);
 tree.insert(20);
+tree.BFS();
+// would return [ 10, 6, 15, 3, 8, 20 ]
 tree.DFSPreOrder();
+// would return [ 10, 6, 3, 8, 15, 20]
 tree.DFSPostOrder();
+// would return [ 3, 8, 6, 20, 15, 10 ]
 tree.DFSInOrder();
+// would return [ 3, 6, 8, 10, 15, 20 ]
