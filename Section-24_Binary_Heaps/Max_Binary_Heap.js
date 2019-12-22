@@ -1,21 +1,9 @@
-// ******** HEAP INSERT ********
-// Push the value into the values property on the heap
-// Bubble Up:
-// Create a variable called index which is the length of the values property - 1
-// Create a variable called parentIndex which is the floor of (index-1)/2
-// Keep looping as long as the values element at the parentIndex is less than the values element at the child index
-// Swap the value of the values element at the parentIndex with the value of the element property at the child index
-// Set the index to be the parentIndex, and start over!
-// *****************************
-
-
 // ******* MAX HEAPIFY ********
 // Converting an array into a MaxBinaryHeap
 // Create a new heap
 // Iterate over the array and invoke your insert function
 // return the values property on the heap
 // ****************************
-
 
 // ****** HEAP SORT *******
 // We can sort an array in O(n log n) time and O(1) space by making it a heap!
@@ -30,19 +18,27 @@ class MaxBinaryHeap {
   constructor() {
     this.values = [];
   }
+  // Heap Insert:
   insert(element) {
+    // Push the value into the values property on the heap
     this.values.push(element);
     this.bubbleUp();
   }
+  // Bubble Up:
   bubbleUp() {
+    // Create a variable called index which is the length of the values property - 1
     let idx = this.values.length - 1;
     const element = this.values[idx];
     while (idx > 0) {
+      // Create a variable called parentIndex which is the floor of (index-1)/2
       let parentIdx = Math.floor((idx - 1) / 2);
       let parent = this.values[parentIdx];
+      // Keep looping as long as the values element at the parentIndex is less than the values element at the child index
       if (element <= parent) break;
+      // Swap the value of the values element at the parentIndex with the value of the element property at the child index
       this.values[parentIdx] = element;
       this.values[idx] = parent;
+      // Set the index to be the parentIndex, and start over!
       idx = parentIdx;
     }
   }
