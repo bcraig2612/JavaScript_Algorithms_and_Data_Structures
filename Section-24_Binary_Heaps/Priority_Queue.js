@@ -80,14 +80,12 @@ class PriorityQueue {
     }
   }
 }
-
 class Node {
   constructor(val, priority) {
     this.val = val;
     this.priority = priority;
   }
 }
-
 let ER = new PriorityQueue();
 ER.enqueue('common cold', 5);
 ER.enqueue('gunshot wound', 1);
