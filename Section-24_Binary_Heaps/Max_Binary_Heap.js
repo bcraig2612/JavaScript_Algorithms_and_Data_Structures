@@ -1,19 +1,3 @@
-// ******* MAX HEAPIFY ********
-// Converting an array into a MaxBinaryHeap
-// Create a new heap
-// Iterate over the array and invoke your insert function
-// return the values property on the heap
-// ****************************
-
-// ****** HEAP SORT *******
-// We can sort an array in O(n log n) time and O(1) space by making it a heap!
-// Make the array a max heap (use maxHeapify)
-// Loop over the array, swap the root node with last item in the array
-// After swapping each item, run maxHeapify again to find the next root node
-// Next loop you'll swap the root node with the second-to-last item in the array and run maxHeapify again.
-// Once you've run out of items to swap, you have a sorted array!
-// ************************
-
 class MaxBinaryHeap {
   constructor() {
     this.values = [];
@@ -40,6 +24,51 @@ class MaxBinaryHeap {
       this.values[idx] = parent;
       // Set the index to be the parentIndex, and start over!
       idx = parentIdx;
+    }
+  }
+  extractMax() {
+    const max = this.values[0];
+    const end = this.values.pop();
+    if(this.values.length > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
+    return max;
+  }
+  // Original Array:
+   // [ 55, 39, 41, 18, 27, 12, 33 ]
+  // Where We Currently Are 1st Time Through:
+    //   0   1   2   3   4   5
+   // [ 33, 39, 41, 18, 27, 12 ]
+  sinkDown() {
+    let index = 0;
+    const length = this.values.length;
+    const element = this.values[0];
+    while(true) {
+      let leftChildIndex = 2 * index + 1;
+      let rightChildIndex = 2 * index + 2;
+      let leftChild, rightChild;
+      let swap = null;
+
+      if(leftChildIndex < length) {
+        leftChild = this.values[leftChildIndex];
+        if(leftChild > element) {
+          swap = leftChildIndex;
+        }
+      }
+      if(rightChild < length) {
+        rightChild = this.values[rightChildIndex];
+        if(
+            (swap === null && rightChild > element) ||
+            (swap !== null && rightChild > leftChild)
+          ) {
+              swap = rightChildIndex;
+        }
+      }
+      if(swap === null) break;
+      this.values[index] = this.values[swap];
+      this.values[swap] = element;
+      index = swap;
     }
   }
 }
